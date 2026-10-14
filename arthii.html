@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Arthi</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3, #845ec2);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* First Screen */
+        .welcome {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .welcome h1 {
+            font-size: 65px;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        .welcome p {
+            font-size: 24px;
+            margin: 20px;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px white;
+            }
+
+            to {
+                text-shadow:
+                    0 0 20px white,
+                    0 0 40px #ffe600,
+                    0 0 60px #ff4f81;
+            }
+        }
+
+        button {
+            padding: 15px 35px;
+            border: none;
+            border-radius: 30px;
+            background: white;
+            color: #ff4f81;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        /* Hidden Birthday Section */
+        #birthday {
+            display: none;
+            padding: 30px 15px;
+            animation: appear 2s ease;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #birthday h1 {
+            font-size: 55px;
+            margin-bottom: 10px;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        /* Photos */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .gallery img {
+            width: 220px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 5px solid white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+
+            opacity: 0;
+            transform: scale(0.5);
+
+            animation: photoAppear 1s forwards;
+        }
+
+        .gallery img:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+
+        .gallery img:nth-child(2) {
+            animation-delay: 0.6s;
+        }
+
+        .gallery img:nth-child(3) {
+            animation-delay: 0.9s;
+        }
+
+        .gallery img:nth-child(4) {
+            animation-delay: 1.2s;
+        }
+
+        .gallery img:nth-child(5) {
+            animation-delay: 1.5s;
+        }
+
+        .gallery img:nth-child(6) {
+            animation-delay: 1.8s;
+        }
+
+        @keyframes photoAppear {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .message {
+            max-width: 800px;
+            margin: 40px auto;
+            font-size: 24px;
+            line-height: 1.6;
+            font-weight: bold;
+
+            opacity: 0;
+            animation: messageAppear 2s forwards;
+            animation-delay: 2.2s;
+        }
+
+        @keyframes messageAppear {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .wish {
+            font-size: 30px;
+            margin-top: 30px;
+            opacity: 0;
+            animation: messageAppear 2s forwards;
+            animation-delay: 3s;
+        }
+
+        /* Floating Hearts */
+        .heart {
+            position: fixed;
+            bottom: -30px;
+            font-size: 25px;
+            animation: float 5s linear forwards;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh);
+                opacity: 0;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+
+            .welcome h1 {
+                font-size: 45px;
+            }
+
+            #birthday h1 {
+                font-size: 42px;
+            }
+
+            .subtitle {
+                font-size: 19px;
+            }
+
+            .gallery img {
+                width: 160px;
+                height: 210px;
+            }
+
+            .message {
+                font-size: 19px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- FIRST SCREEN -->
+
+    <div class="welcome" id="welcome">
+
+        <h1>🎂 HBD ARTHI 🎂</h1>
+
+        <p>
+            💖 A Special Surprise For You 💖
+        </p>
+
+        <button onclick="startBirthday()">
+            💝 Click Here 💝
+        </button>
+
+    </div>
+
+
+    <!-- BIRTHDAY CONTENT -->
+
+    <div id="birthday">
+
+        <h1>🎉 HAPPY BIRTHDAY ARTHI 🎉</h1>
+
+        <div class="subtitle">
+            💖 To the Beautiful Birthday Girl 💖
+        </div>
+
+
+        <!-- PHOTOS -->
+
+        <div class="gallery">
+
+            <!-- Replace these with Arthi's photos -->
+
+            <img src="arthi1.jpeg" alt="Arthi Photo 1">
+        <img src="arthi2.jpeg" alt="Arthi Photo 2">
+        <img src="arthi3.jpeg" alt="Arthi Photo 3">
+        <img src="arthi4.jpeg" alt="Arthi Photo 4">
+        <img src="arthi5.jpeg" alt="Arthi Photo 5">
+        <img src="arthi6.jpeg" alt="Arthi Photo 6">
+        <img src="arthi7.jpeg" alt="Arthi Photo 7">
+        <img src="arthi8.jpeg" alt="Arthi Photo 8">
+        <img src="arthi9.jpeg" alt="Arthi Photo 9">
+        <img src="arthi10.jpeg" alt="Arthi Photo 10">
+
+        </div>
+
+
+        <!-- MESSAGE -->
+
+        <div class="message">
+
+            💕 Dear Arthi 💕
+
+            <br><br>
+
+            Today is a very special day because
+            someone very special was born! 🎂✨
+
+            <br><br>
+
+            May your life always be filled with
+            happiness, love, laughter and beautiful memories. 💖
+
+            <br><br>
+
+            May all your dreams come true
+            and may every new year of your life
+            bring you more reasons to smile. 🌸✨
+
+        </div>
+
+
+        <div class="wish">
+
+            🎁 Once Again, Happy Birthday Arthi! 🎁
+
+            <br><br>
+
+            🥳💖🎂✨🌸
+
+            <br><br>
+            Special Wishes by HIRTHIKROSHAN😎
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function startBirthday() {
+
+            // Hide welcome screen
+            document.getElementById("welcome").style.display = "none";
+
+            // Show birthday content
+            document.getElementById("birthday").style.display = "block";
+
+            // Start floating hearts
+            setInterval(createHeart, 300);
+
+            // Scroll to birthday content
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+
+
+        function createHeart() {
+
+            const heart = document.createElement("div");
+
+            heart.className = "heart";
+
+            const hearts = ["❤️", "💖", "💕", "💗", "💓", "✨", "🌸"];
+
+            heart.innerHTML =
+                hearts[Math.floor(Math.random() * hearts.length)];
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+            heart.style.animationDuration =
+                (3 + Math.random() * 4) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 7000);
+        }
+
+    </script>
+
+</body>
+</html>
